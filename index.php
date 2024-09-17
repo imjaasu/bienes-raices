@@ -1,38 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienes Raíces</title>
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-<body>
-    <header class="header inicio">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-                <a href="/">
-                    <img src="build/img/logo.svg" alt="Logotipo de bienes raíces">
-                </a>
-
-                <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="icono menu responsive">
-                </div>
-
-                <div class="derecha">
-                    <img class="dark-mode-boton" src="build/img/dark-mode.svg" alt="boton dark mode">
-                    <nav class="navegacion">
-                        <a href="nosotros.html">Nosotros</a>
-                        <a href="anuncios.html">Anuncios</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="contacto.html">Contacto</a>
-                    </nav>
-                </div>
-                
-            </div>
-
-            <h1>Venta de Casas y Departamenos Exclusivos de Lujo</h1>
-        </div>
-    </header>
+<?php
+    include './includes/templates/header.php';
+?>
 
     <main class="contenedor seccion">
         <h1>Más Sobre Nosotros</h1>
@@ -74,7 +42,8 @@
                     <h3>Casa de Lujo en el Lago</h3>
                     <p>Casa en el lago con excelente vista, acabados de lujo a un excelente precio</p>
                     <p class="precio">$3,000,000</p>
-
+                        
+                    
                     <ul class="iconos-caracteristicas">
                         <li>
                             <img loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
