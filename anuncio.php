@@ -1,7 +1,6 @@
 <?php
     include './includes/templates/header.php';
 ?>
-
     <main class="contenedor seccion contenido-centrado">
         <h1>Casa en Venta Frente al Bosque</h1>
 
