@@ -10,7 +10,7 @@
     <header class="header inicio">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="/">
+                <a href="index.php">
                     <img src="build/img/logo.svg" alt="Logotipo de bienes raíces">
                 </a>
 
