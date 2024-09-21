@@ -19,9 +19,17 @@
 
         //INSERTAR EN LA BASE DE DATOS
 
-        $query = "INSERT INTO propiedades (titulo, precio, descripcion, habitaciones, wc, estacionamiento, vendedorId) VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$wc', '$estacionamiento', '$vendedorId')";
+        $query = "INSERT INTO propiedades (titulo, precio, descripcion, habitaciones, wc, estacionamiento, vendedores_id) VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$wc', '$estacionamiento', '$vendedorId')";
 
-        echo $query;
+        //echo $query;
+
+        $resultado = mysqli_query($db, $query);
+
+        if($resultado){
+            echo "Los datos se han insertado a la base de datos";
+        } else{
+            echo "Error al insertar los datos a la base de datos";
+        }
 
         
     }
@@ -53,7 +61,7 @@
                 <label for="descripcion">Descripción</label>
                 <textarea id="descripcion" name="descripcion"></textarea>
             </fieldset>
-
+            
             <fieldset>
                 <legend>Información Propiedad</legend>
 
