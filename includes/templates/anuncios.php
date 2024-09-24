@@ -40,7 +40,7 @@
                     </li>
                 </ul>
 
-                <a class="boton-amarillo-block" href="anuncio.html?id=<?php echo $propiedad['id']; ?>">Ver Propiedad</a>
+                <a class="boton-amarillo-block" href="../../anuncio.php?id=<?php echo $propiedad['id']; ?>">Ver Propiedad</a>
             </div>
         </div> <!--FIN anuncio-->
         <?php endwhile; ?>
