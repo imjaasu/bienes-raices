@@ -115,7 +115,7 @@
             if($resultado){
                 // Redirigir al usuario si los datos se enviaron correctamente
 
-                header('Location: /admin');
+                header('Location: /admin?resultado=1');
             } else{
                 
             }
