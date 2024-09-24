@@ -90,21 +90,23 @@
         // Revisar que el arreglo de errores está vacío
         if(empty($errores)){
 
-            // Subida de archivos
+            // *SUBIDA DE ARCHIVOS*
 
-            // Crear una carpeta
-            $carpetaImagenes = '../../imagenes';
+            // Crear una carpeta si no existe
+            $carpetaImagenes = '../../imagenes/';
 
             if(!is_dir($carpetaImagenes)){
                 mkdir($carpetaImagenes);
             }
 
+            // Generar un nombre único a los archivos
+            $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
+
             // Subir la imagen a la carpeta
-            move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . "/archivo.jpg");
+            move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
 
-            exit;
 
-            $query = "INSERT INTO propiedades (titulo, precio, descripcion, habitaciones, wc, estacionamiento, creado, vendedores_id) VALUES ('$titulo', '$precio', '$descripcion', '$habitaciones', '$wc', '$estacionamiento', '$creado', '$vendedorId')";
+            $query = "INSERT INTO propiedades (titulo, precio, imagen, descripcion, habitaciones, wc, estacionamiento, creado, vendedores_id) VALUES ('$titulo', '$precio', '$nombreImagen', '$descripcion', '$habitaciones', '$wc', '$estacionamiento', '$creado', '$vendedorId')";
 
             // echo $query;
 
