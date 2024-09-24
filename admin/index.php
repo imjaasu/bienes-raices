@@ -1,4 +1,15 @@
 <?php
+
+    // Importar la conexión
+    require '../includes/config/database.php';
+    $db = conectarDB();
+
+    // Escribir el query
+    $query = "SELECT * FROM propiedades";
+
+    // Consultar la base de datos
+    $resultadoConsulta = mysqli_query($db, $query);
+
     //Busca el mensaje en la URL y en caso de no existir se le asigna el valor de NULL
     $resultado = $_GET['resultado'] ?? null;
 
@@ -29,20 +40,26 @@
             </thead>
 
             <tbody>
+                <?php while($propiedad = mysqli_fetch_assoc($resultadoConsulta)): ?>
                 <tr>
-                    <td>1</td>
-                    <td>Casa en la playa</td>
-                    <td> <img src="/imagenes/09c318c2f974be0c4f060df7f74f92b1.jpg" alt="" class="imagen-tabla"></td>
-                    <td>$1200000</td>
+                    <td><?php echo $propiedad['id']; ?></td>
+                    <td><?php echo $propiedad['titulo']; ?></td>
+                    <td> <img src="/imagenes/<?php echo $propiedad['imagen']; ?>" alt="" class="imagen-tabla"></td>
+                    <td>$ <?php echo $propiedad['precio'] ?></td>
                     <td>
                         <a href="#" class="boton-rojo-block">Eliminar</a>
                         <a href="#" class="boton-amarillo-block">Actualizar</a>
                     </td>
                 </tr>
+                <?php endwhile; ?>
             </tbody>
         </table>
     </main>
 
 <?php
+
+    // Cerrar la conexión con la base de datos
+    mysqli_close($db);
+
     incluirTemplate('footer');
 ?>
