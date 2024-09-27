@@ -31,6 +31,11 @@
 
                 if($autenticado){
                     // El usuario está autenticado
+                    session_start();
+
+                    // Llenar el arreglo de la sesión
+                    $_SESSION['usuario'] = $usuario['email'];
+                    $_SESSION['login'] = true;
 
                 } else{
                     // El usuario no está autenticado
