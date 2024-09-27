@@ -37,6 +37,8 @@
                     $_SESSION['usuario'] = $usuario['email'];
                     $_SESSION['login'] = true;
 
+                    header('Location: /admin');
+
                 } else{
                     // El usuario no está autenticado
                     $errores[] = "La contraseña es incorrecta";

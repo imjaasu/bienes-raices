@@ -12,7 +12,7 @@ function estaAutenticado() : bool{
     
     $autenticado = $_SESSION['login'];
 
-    if(!$autenticado){
+    if($autenticado){
         return true;
     } 
 
